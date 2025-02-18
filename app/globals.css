@@ -19,5 +19,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to right, #64748b, #475569, #334155, #1e293b);
 }
