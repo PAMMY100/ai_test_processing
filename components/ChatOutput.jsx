@@ -12,7 +12,7 @@ const override = {
   borderWith: "5px"
 }
 
-const ChatOutput = ({text, summary, setSummary}) => {
+const ChatOutput = ({text, summary, setSummary, outputRef}) => {
   const [language, setLanguage] = useState("en");
   const [translatedText, setTranslatedText] = useState("");
   const [detectedLanguage, setDetectedLanguage] = useState("");
@@ -84,7 +84,7 @@ const ChatOutput = ({text, summary, setSummary}) => {
 
     
   return (
-    <motion.div 
+    <motion.div ref={outputRef}
       initial={{ x: "100vw", opacity: 0 }} // Start off-screen to the right
       animate={{ x: 0, opacity: 1 }} // Slide in to position
       transition={{ type: "spring", stiffness: 60, damping: 15 }} // Smooth animation

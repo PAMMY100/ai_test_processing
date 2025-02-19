@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ChatOutput from './ChatOutput';
 import Chatinput from './Chatinput';
 
@@ -8,6 +8,8 @@ const TextProcessor = ({onClose}) => {
     const [message, setMessage] = useState('')
     const [error, setError] = useState("")
     const [summary, setSummary] = useState("");
+
+    const outputRef = useRef()
     
 
     const handleSend = () => {
@@ -18,6 +20,9 @@ const TextProcessor = ({onClose}) => {
         if (text.length < 150) {
             setSummary("")
         }
+        if (outputRef.current) {
+            outputRef.current.scrollIntoView({ behavior: "smooth" });
+        }
         setMessage(text);
         setText("")
         setError("")
@@ -26,7 +31,7 @@ const TextProcessor = ({onClose}) => {
   return (
     <div className='relative bg-white flex flex-col justify-center items-center align-middle h-full border-2 w-[650px] p-2 border-slate-700 rounded-2xl md:w-[850px]'>
       <button className='absolute top-2 left-2 w-[100px] text-white bg-red-600 h-[40px] rounded-md' onClick={onClose}>Exit</button>
-      <ChatOutput text={message} input={text} summary={summary} setSummary={setSummary}/>
+      <ChatOutput outputRef={outputRef} text={message} input={text} summary={summary} setSummary={setSummary}/>
       <Chatinput text={text} setText={setText} onSend={handleSend} error={error}/>
     </div>
   )
