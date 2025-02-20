@@ -29,7 +29,7 @@ const TextProcessor = ({onClose}) => {
     }
 
   return (
-    <div className='relative bg-white flex flex-col justify-center items-center align-middle h-full border-2 w-[650px] p-2 border-slate-700 rounded-2xl md:w-[850px]'>
+    <div className='relative bg-white flex flex-col justify-center items-center align-middle h-[70%] md:h-full border-2 w-[430px] p-2 border-slate-700 rounded-2xl md:w-[750px]'>
       <button className='absolute top-2 left-2 w-[100px] text-white bg-red-600 h-[40px] rounded-md' onClick={onClose}>Exit</button>
       <ChatOutput outputRef={outputRef} text={message} input={text} summary={summary} setSummary={setSummary}/>
       <Chatinput text={text} setText={setText} onSend={handleSend} error={error}/>

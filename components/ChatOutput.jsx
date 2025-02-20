@@ -88,14 +88,14 @@ const ChatOutput = ({text, summary, setSummary, outputRef}) => {
       initial={{ x: "100vw", opacity: 0 }} // Start off-screen to the right
       animate={{ x: 0, opacity: 1 }} // Slide in to position
       transition={{ type: "spring", stiffness: 60, damping: 15 }} // Smooth animation
-      className='mt-11 w-[600px] h-full border-2 border-blue-100 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 flex flex-col gap-4 p-10 text-white text-xl rounded-xl md:w-[95%] md:text-2xl'>
-      <h1 className="text-3xl font-bold mb-4 md:text-4xl bg-gradient-to-r from-blue-100 via-blue-300 to-blue-700 bg-clip-text text-transparent">Translate Text Here!</h1>
+      className='bg-fontFamily-poppins-0 mt-11 w-[95%] h-full border-2 border-blue-100 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 flex flex-col gap-4 p-10 text-white text-lg rounded-xl md:w-[90%] md:text-2xl'>
+      <h1 className="text-2xl font-bold mb:2 md:mb-4 md:text-4xl bg-gradient-to-r from-blue-100 via-blue-300 to-blue-700 bg-clip-text text-transparent">Translate Text Here!</h1>
       <div>
-        <p className='mb-4 font-semibold'>Text: <span className='text-blue-300'>{text}</span></p>
+        <p className='mb-2 md:mb-4 font-semibold'>Text: <span className='text-blue-300'>{text}</span></p>
         {detectLanguage && <p className='font-bold mb-8'>Dectected Language: <span className='text-blue-300'>{detectedLanguage}</span></p>}
       </div>
       <div>
-        <select className='text-blue-800  w-[350px] h-16 rounded mr-3 border-none focus:border-none outline-none p-3 md:w-[95%] md:mb-3' name="languages" value={language} onChange={(e) => setLanguage(e.target.value)}>
+        <select className='text-blue-800  w-[300px] h-11 md:h-16 rounded mb-2 mr-3 border-none focus:border-none outline-none p-3 md:w-[95%] md:mb-3' name="languages" value={language} onChange={(e) => setLanguage(e.target.value)}>
           <option value="en">English</option>
           <option value="fr">French</option>
           <option value="pt">Portuguese</option>
@@ -104,14 +104,14 @@ const ChatOutput = ({text, summary, setSummary, outputRef}) => {
           <option value="tr">Turkish</option>
         </select>
 
-        <button className='h-16 w-[150px] bg-white text-blue-800 font-bold border-slate-500 rounded-lg hover:bg-slate-600 hover:text-white transition duration-700 ease-in-out md:w-[300px]' onClick={translateText}>Translate</button>
+        <button className='h-10 md:h-16 w-[150px] bg-white text-blue-800 font-bold border-slate-500 rounded-lg hover:bg-slate-600 hover:text-white transition duration-700 ease-in-out md:w-[300px]' onClick={translateText}>Translate</button>
       </div>
       <div>
     </div>
-      <p className='font-bold mt-6'>Translation: <span className='text-blue-300'>{translatedText}</span></p>
+      <p className='font-bold mt-3 md:mt-6'>Translation: <span className='text-blue-300'>{translatedText}</span></p>
       {error && <p className='text-2xl font-bold text-red-600'>{error}</p>}
       <div>
-        {text.length > 150 && <button className='mb-3 h-16 w-[150px] flex justify-around text-center align-middle items-center p-3 bg-white text-blue-800 font-bold border-slate-500 rounded-lg hover:bg-slate-600 hover:text-white transition duration-700 ease-in-out md:w-[300px]' onClick={summarizeText} disabled={loading}>{loading ? "Summarizing" : "summarize"}
+        {text.length > 150 && <button className='mb-3 h-16 w-[200px] flex justify-around text-center align-middle items-center p-3 bg-white text-blue-800 font-bold border-slate-500 rounded-lg hover:bg-slate-600 hover:text-white transition duration-700 ease-in-out md:w-[300px]' onClick={summarizeText} disabled={loading}>{loading ? "Summarizing" : "summarize"}
           {loading && (
             <ClipLoader 
               color='blue' 
