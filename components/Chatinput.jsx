@@ -13,7 +13,7 @@ const Chatinput = ({text, setText, onSend, error}) => {
       className="flex flex-col gap-4 justify-center w-[580px] h-[450px] p-3 md:w-[80%] bg-fontFamily-poppins-1"
     >
       <textarea
-        className="h-[200px] w-[70%] md:h-[300px] md:w-[90%] border-slate-600 border-4 mx-auto text-xl md:text-2xl p-4 outline-none rounded-2xl"
+        className="h-[200px] w-[70%] md:h-[300px] md:w-[90%] border-slate-600 border-4 mx-auto text-xl text-slate-500 md:text-2xl p-4 outline-none rounded-2xl"
         name="text"
         placeholder="Enter your text here"
         value={text}

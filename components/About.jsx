@@ -6,6 +6,7 @@ const About = ({onOpen}) => {
     <div className='w-[90%] h-[700px] md:h-[980px] rounded-2xl text-white border-2 border-blue-100 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 flex flex-col gap-6 md:gap-14 justify-center items-center p-10 m-auto font-serif'>
         <h1 className='sm:text-xl text-2xl font-bold mb-4 md:text-4xl animate-bounce bg-gradient-to-r from-blue-100 via-blue-300 to-blue-700 bg-clip-text text-transparent'>Ai Text Processing</h1>
         <section className='text-xl md:text-2xl flex flex-col gap-5'>
+            <p>⚠️Use App in Chrome Browser</p>
             <p>🖊️ Enter a text</p>
             <p>🔍 The Ai will automatically detect the language of the entered text</p>
             <p>🔁 Translate to the available language in the options</p>
