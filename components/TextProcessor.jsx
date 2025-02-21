@@ -1,40 +1,30 @@
-'use client'
-import React, { useRef, useState } from 'react';
-import ChatOutput from './ChatOutput';
-import Chatinput from './Chatinput';
+import ChatOutput from "./ChatOutput";
+import Header from "./Header";
+import { motion } from "framer-motion";
 
-const TextProcessor = ({onClose}) => {
-    const [text, setText] = useState('');
-    const [message, setMessage] = useState('')
-    const [error, setError] = useState("")
-    const [summary, setSummary] = useState("");
-
-    const outputRef = useRef()
-    
-
-    const handleSend = () => {
-        if(text.trim() === "") {
-            setError("Enter a text to translate!");
-            return;
-        }
-        if (text.length < 150) {
-            setSummary("")
-        }
-        if (outputRef.current) {
-            outputRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-        setMessage(text);
-        setText("")
-        setError("")
-    }
+const TextProcessor = ({messages, onTranslate, onSummarize, loading, messageListRef}) => {
 
   return (
-    <div className='relative bg-white flex flex-col justify-center items-center align-middle h-[70%] md:h-full border-2 w-[430px] p-2 border-slate-700 rounded-2xl md:w-[750px]'>
-      <button className='absolute top-2 left-2 w-[100px] text-white bg-red-600 h-[40px] rounded-md' onClick={onClose}>Exit</button>
-      <ChatOutput outputRef={outputRef} text={message} input={text} summary={summary} setSummary={setSummary}/>
-      <Chatinput text={text} setText={setText} onSend={handleSend} error={error}/>
-    </div>
-  )
-}
+    <motion.div 
+        initial={{ y: '0vh', opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 60, damping: 15 }}
+        className="reltive mx-auto px-5 h-[80%] w-[98%] rounded-lg md:w-[90%] overflow-auto bg-gradient-to-r from-slate-300 via-slate-500 to-slate-900">
+        <Header />
+        <div className="mt-20">
+            {messages.map((message) => (
+                <ChatOutput
+                key={message.id}
+                message={message}
+                onTranslate={onTranslate}
+                onSummarize={onSummarize}
+                loading={loading}
+                messageListRef={messageListRef}
+                />
+            ))}
+        </div>
+    </motion.div>
+  );
+};
 
-export default TextProcessor
+export default TextProcessor;
