@@ -20,9 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta httpEquiv="origin-trial" content={process.env.NEXT_PUBLIC_TRANSLATOR_TOKEN}/>
-        <meta httpEquiv="origin-trial" content={process.env.NEXT_PUBLIC_LANGUAGE_DECTECTOR_TOKEN}/>
-        <meta httpEquiv="origin-trial" content={process.env.NEXT_PUBLIC_SUMMARIZER_TOKEN}/>
+        <meta httpEquiv="origin-trial" content="AhWnXCWWCRAxLvxsqXHPw9Vrta+dlG8czb09Fx0WbipSeFS7bcLPgwa4O9DdQoD1EcWYF/gHc2hz69u9xHTp+gsAAAB4eyJvcmlnaW4iOiJodHRwczovL2FpLXRlc3QtcHJvY2Vzc2luZy52ZXJjZWwuYXBwOjQ0MyIsImZlYXR1cmUiOiJUcmFuc2xhdGlvbkFQSSIsImV4cGlyeSI6MTc1MzE0MjQwMCwiaXNTdWJkb21haW4iOnRydWV9"/>
+        <meta httpEquiv="origin-trial" content="Am8PMvSg3UnuF2l8YYkdxrhMT6LN9A0BVcKmSzfzKY+hlhpF0MCwe2aiRju85rqc0OSTpOuVPujILARWM5/PfwkAAAB+eyJvcmlnaW4iOiJodHRwczovL2FpLXRlc3QtcHJvY2Vzc2luZy52ZXJjZWwuYXBwOjQ0MyIsImZlYXR1cmUiOiJMYW5ndWFnZURldGVjdGlvbkFQSSIsImV4cGlyeSI6MTc0OTU5OTk5OSwiaXNTdWJkb21haW4iOnRydWV9"/>
+        <meta httpEquiv="origin-trial" content="AjiTAcySBDHwws+SO87iBxBHlAJnhIOqDYH1D3GzMKCJQDdNxskuWG55+FSDzsjpVe+5JIJUMJev4QC/PuL+pQ8AAABpeyJvcmlnaW4iOiJodHRwczovL2FpLXRlc3QtcHJvY2Vzc2luZy52ZXJjZWwuYXBwOjQ0MyIsImZlYXR1cmUiOiJBSVN1bW1hcml6YXRpb25BUEkiLCJleHBpcnkiOjE3NTMxNDI0MDB9"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

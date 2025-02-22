@@ -26,7 +26,7 @@ const ChatInput = ({ onSendMessage }) => {
       className='absolute -bottom-1 flex gap-1 md:gap-4 justify-between align-middle md:left-[9%] w-[100%] h-[20%] p-5 md:w-[80%] bg-fontFamily-poppins-1'
     >
       <textarea
-        className='w-[86%] h-[80%] md:h-full md:w-[90%] border-slate-600 border-4 text-xl text-slate-500 md:text-2xl p-4 outline-none rounded-2xl'
+        className='w-[86%] h-[80%] md:h-full md:w-[90%] border-slate-600 border-4 text-xl text-slate-900 md:text-2xl p-4 outline-none rounded-2xl'
         placeholder='Enter your text....'
         value={text}
         onChange={(e) => setText(e.target.value)}
