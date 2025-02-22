@@ -56,7 +56,10 @@ const Page = () => {
     <div className="relative flex flex-col h-full w-full p-1 gap-4 borrder border-slate-500">
       <TextProcessor messages={messages} onTranslate={handleTranslate} onSummarize={handleSummarize} loading={loading} messageListRef={messageListRef}/>
       <ChatInput onSendMessage={handleSendMessage}/>
-      <ToastContainer />
+      <ToastContainer 
+        autoClose={2000}
+        hideProgressBar
+        />
     </div>
   );
 };

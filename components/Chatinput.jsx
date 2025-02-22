@@ -23,7 +23,7 @@ const ChatInput = ({ onSendMessage }) => {
       initial={{ y: '100vh', opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 60, damping: 15 }}
-      className='absolute -bottom-1 flex gap-1 md:gap-4 justify-between align-middle md:left-[9%] w-[100%] h-[20%] p-5 md:w-[80%] bg-fontFamily-poppins-1'
+      className='absolute -bottom-1 flex gap-1 md:gap-4 justify-between align-middle md:left-[9%] w-[100%] h-[30%] p-5 md:w-[80%] bg-fontFamily-poppins-1'
     >
       <textarea
         className='w-[86%] h-[80%] md:h-full md:w-[90%] border-slate-600 border-4 text-xl text-slate-900 md:text-2xl p-4 outline-none rounded-2xl'

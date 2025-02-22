@@ -20,7 +20,7 @@ function ChatOutput({ message, onTranslate, onSummarize, loading, messageListRef
       initial={{ x: '100vw', opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 60, damping: 15 }}
-      className='bg-fontFamily-poppins-0 md:ml-14 mt-5 w-[95%] h-[8%] border-2 border-blue-100 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 flex flex-col gap-4 p-10 text-white text-lg rounded-xl md:w-[90%] md:text-2xl'>
+      className='bg-fontFamily-poppins-0 md:ml-14 mt-5 w-[98%] h-[6%] p-3 border-2 border-blue-100 bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 flex flex-col gap-4 md:p-10 text-white text-lg rounded-xl md:w-[90%] md:text-2xl'>
       <p className='mb-1 md:mb-4 font-semibold'>Text: <span className='text-blue-300 font-normal'>{message.text}</span></p>
       <p className='mb-1 md:mb-4 font-semibold'>Detected Language: <span className='text-blue-300'>{message.detectedLanguage}</span></p>
       {message.translatedText && <p className='mb-1 md:mb-4 font-semibold'>Translated Text: <span className='text-blue-300 font-normal'>{message.translatedText}</span></p>}
