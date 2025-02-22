@@ -2,7 +2,7 @@
 // import About from "@/components/About";
 import ChatInput from "@/components/Chatinput";
 import TextProcessor from "@/components/TextProcessor";
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useRef, useState } from "react";
 import { detectLanguage, summarizeText, translateText } from "@/utils/api";
@@ -15,6 +15,13 @@ const Page = () => {
   const messageListRef = useRef(null);
 
   // const toggleView = () => setOpen((prev) => !prev);
+
+  useEffect(() => {
+    if (!('ai' in self && 'translator' in self.ai)) {
+      // The Translator API is supported.
+      toast.error("Your browser does not support the Ai features")
+    }
+  }, [])
 
   useEffect(() => {
     if (messageListRef.current) {
