@@ -19,7 +19,10 @@ const Page = () => {
   useEffect(() => {
     if (!('ai' in self && 'translator' in self.ai)) {
       // The Translator API is supported.
-      toast.error("Your browser does not support the Ai features")
+      toast.error("Your browser does not support the Ai features", {
+        autoClose: 5000
+      })
+      return
     }
   }, [])
 
