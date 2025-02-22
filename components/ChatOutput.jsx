@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 
-function ChatOutput({ message, onTranslate, onSummarize, loading, messageListRef }) {
+function ChatOutput({ message, onTranslate, onSummarize, loading, ref }) {
   const [targetLang, setTargetLang] = useState('en');
 
   const handleTranslate = () => {
@@ -16,7 +16,7 @@ function ChatOutput({ message, onTranslate, onSummarize, loading, messageListRef
 
   return (
     <motion.div
-      ref={messageListRef}
+      ref={ref}
       initial={{ x: '100vw', opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 60, damping: 15 }}
